@@ -1,0 +1,30 @@
+package Arrays;
+
+public class BubbleSorting {
+    static void bubbleSorting(int[] arr){
+        int n = arr.length;
+        for (int i = 0; i < arr.length-1; i++) {
+            for (int j = 0; j < arr.length-1; j++) {
+                if(arr[j]>arr[j+1]){
+                    int temp = arr[j];
+                    arr[j] = arr[j+1];
+                    arr[j+1] = temp;
+                }
+            }
+
+        }
+    }
+    static void print(int[] arr){
+        for(int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i]+" ");
+        }
+        System.out.println();
+    }
+
+    static void main(String[] args) {
+        int [] arr  = {32,5,56,7,8,6,48,5,65};
+        print(arr);
+        bubbleSorting(arr);
+        print(arr);
+    }
+}
