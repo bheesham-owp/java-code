@@ -1,0 +1,20 @@
+package Arrays;
+
+public class ReversePrint {
+    public static void main(String[] args) {
+        int[] arr = {3,66,8,87,8765,44,99,28,674};
+        int k= 0;
+        int n = arr.length-1;
+        while(k<n){
+            int temp = arr[k];
+            arr[k] = arr[n];
+            arr[n] = temp;
+            k++;
+            n--;
+        }
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i]+" ");
+        }
+
+    }
+}
