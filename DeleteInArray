@@ -1,0 +1,48 @@
+package Arrays;
+
+import java.util.Scanner;
+
+public class DeleteInArray {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // Array with extra space
+        int[] arr = new int[10];
+        // Initial elements
+        arr[0] = 10;
+        arr[1] = 20;
+        arr[2] = 30;
+        arr[3] = 40;
+        arr[4] = 50;
+        arr[5] = 60;
+        arr[6] = 70;
+
+        // Actual number of elements
+        int n = 7;
+
+        // Print original array
+        System.out.println("Original Array:");
+
+        for (int i = 0; i < n; i++) {
+            System.out.print(arr[i] + " ");
+        }
+        System.out.println();
+
+        // Input delete index
+        System.out.println("Enter index to delete 0 to " + (n - 1)+":");
+        int del = sc.nextInt();
+
+        // Shift elements left
+        for (int i = del+1; i < n; i++) {
+            arr[i-1] = arr[i];
+        }
+        // Reduce size
+        n--;
+        // Print updated array
+        System.out.println("Array After Deletion:");
+
+        for (int i = 0; i < n; i++) {
+            System.out.print(arr[i] + " ");
+        }
+    }
+}
