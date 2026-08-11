@@ -1,0 +1,42 @@
+package Arrays;
+
+public class Binarysearch {
+    static int binarySearch(int arr[], int target) {
+
+        int start = 0;
+        int end = arr.length - 1;
+
+        while(start <= end) {
+
+            int mid = (start + end) / 2;
+
+            // if target found
+            if(arr[mid] == target) {
+                return mid;
+            }
+
+            // if target is greater
+            else if(arr[mid] < target) {
+                start = mid + 1;
+            }
+
+            // if target is smaller
+            else {
+                end = mid - 1;
+            }
+        }
+
+        // if element not found
+        return -1;
+    }
+
+    static void main(String[] args) {
+        int arr[] = {10, 20, 30, 40, 50, 60, 70};
+
+        int target = 50;
+
+        int result = binarySearch(arr, target);
+
+        System.out.println("Your value is at index "+result);
+    }
+}
