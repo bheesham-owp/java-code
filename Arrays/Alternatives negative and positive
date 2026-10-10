@@ -1,0 +1,45 @@
+import java.util.ArrayList;
+
+public class AlternativePositiveAndNegative {
+    void rearrange(ArrayList<Integer> arr) {
+        // code here
+        ArrayList<Integer> positive = new ArrayList<>();
+        ArrayList<Integer> negative = new ArrayList<>();
+
+        int m = 0;
+//to put the elemensts in their relative Arraylist.....
+        while(m < arr.size()) {
+            int ele = arr.get(m);
+            if(ele >= 0) {
+                positive.add(arr.get(m));
+            }else{
+                negative.add(arr.get(m));
+            }
+           m++;
+        }
+//final Arraylist that collect the all elements......
+         ArrayList<Integer> temp = new ArrayList<>();
+        int i=0;
+        int j=0;
+        while(i<positive.size() && j<negative.size()) {
+            temp.add(positive.get(i));
+            temp.add(negative.get(j));
+            i++;
+            j++;
+        }
+//for extra part if positives are more than negative elements......
+        while(i<positive.size()) {
+            temp.add(positive.get(i));
+            i++;
+        }
+//for extra part if nagetives are more than positives elements......
+        while (j<negative.size()) {
+            temp.add(negative.get(j));
+            j++;
+        }
+
+// Put result back into original ArrayList
+        arr.clear();
+        arr.addAll(temp);
+    }
+}
