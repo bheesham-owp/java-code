@@ -1,0 +1,12 @@
+public class FirstOccurance {
+    int firstOccurence(String txt, String pat) {
+        // code here
+        for (int i = 0; i < txt.length(); i++) {
+            char ch = txt.charAt(i);
+            if(pat.charAt(0) == ch){
+
+            }
+        }
+        return -1;
+    }
+}
