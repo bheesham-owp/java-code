@@ -1,0 +1,15 @@
+import java.util.Arrays;
+
+public class SortAnString {
+    public String sortString(String s) {
+        int n = s.length();
+        int arr[] = new int[n];
+        for (int i = 0; i < n; i++) {
+            int ch = s.charAt(i);
+            arr[i] = ch;
+        }
+        Arrays.sort(arr);
+        String str = Arrays.toString(arr);
+        return str;
+    }
+}
