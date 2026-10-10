@@ -1,0 +1,38 @@
+public class MoveAllNegativeToEnd {
+    public void segregateElements(int[] arr) {
+        // code here
+//        int n = arr.length;
+//        for (int i = 0; i < n; i++) {
+//            for (int j = 0; j < n-1; j++) {
+//                if(arr[j] < 0){
+//                    int temp = arr[j];
+//                    arr[j] = arr[j+1];
+//                    arr[i+1] = temp;
+//                }
+//            }
+//        }
+
+
+        int n = arr.length;
+        int[] temp = new int[n];
+        int k = 0;
+
+        for (int i = 0; i < n; i++) {
+            if(arr[i] >= 0) {
+                temp[k] = arr[i];
+                k++;
+            }
+        }
+
+        for (int i = 0; i < n; i++) {
+            if(arr[i] < 0) {
+                temp[k] = arr[i];
+                k++;
+            }
+        }
+
+        for (int i = 0; i < n; i++) {
+            arr[i] = temp[i];
+        }
+    }
+}
